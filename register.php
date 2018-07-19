@@ -1,4 +1,4 @@
-<!Doctype html>
+
 
 <html>
 
@@ -8,7 +8,7 @@
 
 <body>
 
-	<form action="demo_form.php" method="get">
+	<form action="login.php" method="get">
   	account   : <input type="text" name="account"><br>
   	password  : <input type="text" name="password"><br>
   	name      : <input type="text" name="name"><br>
@@ -17,8 +17,12 @@
   	birthday  : <input type="text" name="birthday"><br>
   	skype     : <input type="text" name="skype"><br>
   	graduation: <input type="text" name="graduation"><br>
-  	<input type="submit" value="註冊">
+  	<input type="submit" value="註冊" name="submit1">
 	</form>
+
+
+
+
 
 
 

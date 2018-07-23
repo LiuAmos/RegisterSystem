@@ -1,9 +1,13 @@
-
+<?php
+session_start();
+$_SESSION['account'];
+$_SESSION['password'];
+?>
 
 <html>
 
 <head>
-<title>membership</title>
+<title>Membership</title>
 </head>
 
 <body>
@@ -34,7 +38,7 @@
     //echo $row[0];
     //echo $row[1];
 
-    if($_SESSION['account']==$row[0] AND  $_SESSION['password']==$row[1]){
+    if($_SESSION['account']==$row[0] AND  $_SESSION['password']==$row[1])   {
       echo "login success";
       $result1= mysqli_query($db_link, "SELECT * FROM student WHERE account = '$session_account' ");
       $row1 = mysqli_fetch_row($result1);//變成array
@@ -79,52 +83,50 @@
   	<?php
 	//調整資料
 
-	if (isset($_GET['adjust'])) {
-		echo 'adjust success';
+	if (isset($_GET['b'])) {
+    //echo $_GET['b'];
+		//echo 'adjust success';
+ 		//echo $_GET['comfirmadjust'];
+    //echo $_GET['a'];
 
- 		echo $_GET['comfirmadjust'];
- 		
- 	// 	$reg_password=$_GET['password'];
- 	// 	$reg_name=$_GET['name'];
- 	// 	$reg_phone=$_GET['phone'];
- 	// 	$reg_email=$_GET['email'];
- 	// 	$reg_birthday=$_GET['birthday'];
- 	// 	$reg_skype=$_GET['skype'];
- 	// 	$reg_graduation=$_GET['graduation'];
+    //建立連線
+    $db_link = mysqli_connect('localhost','root','','registersystem') or die("could not connect".mysqli_error());
+    mysqli_set_charset($db_link,"utf8");
 
-
-		// //debug
-		// //echo $reg_account;
-		// //echo $reg_password;
-
-		// //建立連線
-  // 		$db_link = mysqli_connect('localhost','root','','registersystem') or die("could not connect".mysqli_error());
-  // 		mysqli_set_charset($db_link,"utf8");
-
-		// //操作資料庫
- 
- 	// 	mysqli_select_db($db_link,"registersystem");
-		// mysqli_query($db_link,"INSERT INTO student (account,password,name,phone,email,birthday,skype,graduation) VALUES ('$reg_account','$reg_password','$reg_name','$reg_phone','$reg_email','$reg_birthday','$reg_skype','$reg_graduation')");
-
- 	// 	mysqli_close($db_link);
-
-		echo "
-      	<table style='width:45%'>
-
-      	<tr>
-      	<th>Account</th>
-      	<th>Password</th> 
-      	<th>Name</th>
-      	<th>Phone</th>
-      	<th>Email</th>
-      	<th>Birthday</th>
-      	<th>Skype</th>
-      	<th>Graduation</th>
-      	</tr>
+    //操作資料庫
+    mysqli_select_db($db_link,"registersystem");
+    $session_account=$_SESSION['account'];
+    $result1= mysqli_query($db_link, "SELECT * FROM student WHERE account = '$session_account' ");
+    $row1 = mysqli_fetch_row($result1);//變成array
 
 
+    echo "
+        <table style='width:50%'>
 
-      	</table>";
+        <tr>
+        <th>Account</th>
+        <th>Password</th> 
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Birthday</th>
+        <th>Skype</th>
+        <th>Graduation</th>
+        </tr>
+
+        <tr>
+        <td>$row1[0]</td>
+        <td>$row1[1]</td> 
+        <td>$row1[2]</td>
+        <td>$row1[3]</td>
+        <td>$row1[4]</td>
+        <td>$row1[5]</td>
+        <td>$row1[6]</td>
+        <td>$row1[7]</td>
+        </tr>
+
+        </table>"
+      ;
 
 	}
 
@@ -132,7 +134,7 @@
 
 
 
-	<table style='width:45%'>
+	<table style='width:50%'>
 
 
       <tr>
@@ -147,6 +149,22 @@
       </tr>
 
 	</table>
+
+  <table style='width:50%'>
+
+
+     <tr>
+     <td><input type ='submit' onclick="location.href='deletedata.php?c=1'" value='刪除' name='account'></input></td>
+     <td><input type ='submit' onclick="location.href='deletedata.php?c=2'" value='刪除' name='password'></input></td>
+     <td><input type ='submit' onclick="location.href='deletedata.php?c=3'" value='刪除' name='name'></input></td>
+     <td><input type ='submit' onclick="location.href='deletedata.php?c=4'" value='刪除' name='phone'></input></td>
+     <td><input type ='submit' onclick="location.href='deletedata.php?c=5'" value='刪除' name='email'></input></td>
+     <td><input type ='submit' onclick="location.href='deletedata.php?c=6'" value='刪除' name='birthday'></input></td>
+     <td><input type ='submit' onclick="location.href='deletedata.php?c=7'" value='刪除' name='skype'></input></td>
+     <td><input type ='submit' onclick="location.href='deletedata.php?c=8'" value='刪除' name='graduation'></input></td>
+     </tr>
+
+  </table>
 
 	<input type ='submit'  onclick="location.href='login.php'" value='登出'></input>
 

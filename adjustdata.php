@@ -7,6 +7,7 @@ $_SESSION['a'];
 <html>
 
 <head>
+<meta charset="UTF-8">
 <title>AdjustData</title>
 </head>
 

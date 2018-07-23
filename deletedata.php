@@ -7,6 +7,7 @@ $_SESSION['c'];
 <html>
 
 <head>
+<meta charset="UTF-8">
 <title>DeleteData</title>
 </head>
 

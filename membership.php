@@ -7,6 +7,7 @@ $_SESSION['password'];
 <html>
 
 <head>
+<meta charset="UTF-8">
 <title>Membership</title>
 </head>
 

@@ -3,6 +3,7 @@
 <html>
 
 <head>
+<meta charset="UTF-8">
 <title>Register</title>
 </head>
 
@@ -16,7 +17,14 @@
   	email     : <input type="text" name="email"><br>
   	birthday  : <input type="text" name="birthday"><br>
     skype     : <input type="text" name="skype"><br>
-    graduation: <input type="text" name="graduation"><br>
+    graduation: <input type="text" name="graduation"><br><br>
+    sport(radio):<br>
+    <input  type="radio" name="sport" value="baseball">baseball
+    <input  type="radio" name="sport" value="swimming">swimming
+    <input  type="radio" name="sport" value="tennis">tennis<p><br>
+    checkbox:<br>
+    <input  type="checkbox"  name="fb" value="1">FB
+    <input  type="checkbox"  name="line1" value="1">LINE<p>
     <input type="submit" value="註冊" name="submit1">
 	</form>
 
@@ -81,12 +89,20 @@ function validate()
      document.register.graduation.focus() ;
      return false;
    }
-   
+
+  // if( document.register.sport.value == "" )
+  //  {
+  //    alert( "不可為空" );
+  //    document.register.sport.focus() ;
+  //    return false;
+  //  }
 
    return( true );
 }
 //-->
 </script>
+
+
 
 
 

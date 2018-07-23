@@ -46,9 +46,13 @@ $_SESSION['password']="";
  		$reg_birthday=$_GET['birthday'];
  		$reg_skype=$_GET['skype'];
  		$reg_graduation=$_GET['graduation'];
- 		$reg_sport=$_GET['sport'];
+ 		$reg_sport="";
  		$reg_fb="";
  		$reg_line1="";
+
+ 		if(isset($_GET['sport'])){
+ 			$reg_sport=$_GET['sport'];
+ 		}
 
  		if(isset($_GET['fb'])){
  			$reg_fb=$_GET['fb'];

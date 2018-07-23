@@ -5,6 +5,22 @@
 <head>
 <meta charset="UTF-8">
 <title>Register</title>
+<!-- <script type="text/javascript" language="javascript" src="JavaScript/jquery-1.6.1.min.js" ></script>
+<script type="text/javascript" language="javascript">
+      $(function(){
+          $("#submit").click(function(){
+              var val=$('input:radio[name="sport"]:checked').val();
+              if(val== null){
+                 alert("請選一個選項!");
+                 return false;
+              }
+              else{
+                  alert(val);
+              }           
+          });
+      });
+  </script> -->
+  
 </head>
 
 <body>
@@ -25,7 +41,7 @@
     checkbox:<br>
     <input  type="checkbox"  name="fb" value="1">FB
     <input  type="checkbox"  name="line1" value="1">LINE<p>
-    <input type="submit" value="註冊" name="submit1">
+    <input type="submit" value="註冊" name="submit1" id="submit">
 	</form>
 
   <script type="text/javascript">
@@ -90,17 +106,54 @@ function validate()
      return false;
    }
 
-  // if( document.register.sport.value == "" )
-  //  {
-  //    alert( "不可為空" );
-  //    document.register.sport.focus() ;
-  //    return false;
-  //  }
+
+var aa=document.register.sport;
+　　var flag=false;       
+　　for(var i=0;i<aa.length;i++){               
+　　　　if(aa[i].checked){
+                      flag=true;
+                      break;
+                 }         
+　　　}        
+　　if(!flag) {
+             alert("單選按鈕沒選擇!");
+             return false;
+       }
+
+       // var bb=document.register.con2;
+
+       // var fff=false;
+
+       // for(var j=0;j<bb.length;j++){
+
+       //     if(bb[j].checked){
+
+       //         fff=true;
+
+       //      }
+
+       // }
+       // if(!fff){
+       //     alert("多选框没有选择，请选择");
+       //     return false;
+       // }   
 
    return( true );
 }
 //-->
 </script>
+
+<!-- <script language="javascript">
+function checkform(obj)
+{
+for(i=0;i<obj.sport.length;i++){
+          if(obj.sport.checked==true)return true;}
+alert("請選擇")
+return false;       
+}
+</script> -->
+
+
 
 
 

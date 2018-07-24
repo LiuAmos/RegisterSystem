@@ -47,20 +47,34 @@ $_SESSION['password']="";
  		$reg_skype=$_GET['skype'];
  		$reg_graduation=$_GET['graduation'];
  		$reg_sport="";
- 		$reg_fb="";
- 		$reg_line1="";
+ 		$reg_web="";
+ 		//$reg_fb="";
+ 		//$reg_line1="";
+ 		// $i=0;
 
  		if(isset($_GET['sport'])){
  			$reg_sport=$_GET['sport'];
  		}
 
- 		if(isset($_GET['fb'])){
- 			$reg_fb=$_GET['fb'];
+ 		if(isset($_GET['web'])){
+ 			// $reg_fb=$_GET['web[0]'];
+ 			// foreach($_GET['web'] as $key => $value) {
+    //     		echo "{$value}";
+
+    // 		}
+ 			$reg_web=implode(",",$_GET['web']);
+ 			//echo $_GET['web'];
+ 			//echo $reg_web;
+ 		
+ 		}else{
+ 		header("Location: http://localhost/register.php"); 
+		//確保重定向後，後續代碼不會被執行 
+		exit;
  		}
 
- 		if(isset($_GET['line1'])){
- 			$reg_line1=$_GET['line1'];
- 		}
+ 		// if(isset($_GET['line1'])){
+ 		// 	$reg_line1=$_GET['line1'];
+ 		// }
 
 
 
@@ -78,7 +92,7 @@ $_SESSION['password']="";
 		//操作資料庫
  
  		mysqli_select_db($db_link,"registersystem");
-		mysqli_query($db_link,"INSERT INTO student (account,password,name,phone,email,birthday,skype,graduation,sport,fb,line1) VALUES ('$reg_account','$reg_password','$reg_name','$reg_phone','$reg_email','$reg_birthday','$reg_skype','$reg_graduation','$reg_sport','$reg_fb','$reg_line1')");
+		mysqli_query($db_link,"INSERT INTO student (account,password,name,phone,email,birthday,skype,graduation,sport,web) VALUES ('$reg_account','$reg_password','$reg_name','$reg_phone','$reg_email','$reg_birthday','$reg_skype','$reg_graduation','$reg_sport','$reg_web')");
 
  		mysqli_close($db_link);
 

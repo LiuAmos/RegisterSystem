@@ -26,23 +26,31 @@
 <body>
 
 	<form action="login.php" method="get" name="register" onsubmit="return(validate());">
-  	account   : <input type="text" name="account"><br>
-  	password  : <input type="text" name="password"><br>
-  	name      : <input type="text" name="name"><br>
-  	phone     : <input type="text" name="phone"><br>
-  	email     : <input type="text" name="email"><br>
-  	birthday  : <input type="text" name="birthday"><br>
-    skype     : <input type="text" name="skype"><br>
+  	account      : <input type="text" name="account"><br>
+  	password     : <input type="text" name="password" id="password"><br>
+    checkpassword: <input type="text" name="checkpassword" id="checkpassword" onblur="ShowName()"><br>
+  	name         : <input type="text" name="name"><br>
+  	phone        : <input type="text" name="phone"><br>
+  	email        : <input type="text" name="email"><br>
+  	birthday     : <input type="text" name="birthday"><br>
+    skype        : <input type="text" name="skype"><br>
     graduation: <input type="text" name="graduation"><br><br>
     sport(radio):<br>
     <input  type="radio" name="sport" value="baseball">baseball
     <input  type="radio" name="sport" value="swimming">swimming
     <input  type="radio" name="sport" value="tennis">tennis<p><br>
     checkbox:<br>
-    <input  type="checkbox"  name="fb" value="1">FB
-    <input  type="checkbox"  name="line1" value="1">LINE<p>
-    <input type="submit" value="註冊" name="submit1" id="submit">
+    <input  type="checkbox"  name="web[]" value="fb">FB
+    <input  type="checkbox"  name="web[]" value="line" >LINE<p>
+    <input type="submit" value="註冊" name="submit1" id="btnSubmit">
 	</form>
+
+<script language="javascript">
+function ShowName(){
+    alert('讚讚讚!!');
+}
+</script>
+
 
   <script type="text/javascript">
 //<!--
@@ -108,6 +116,8 @@ function validate()
 
 
 var aa=document.register.sport;
+//document.write(aa.length);
+
 　　var flag=false;       
 　　for(var i=0;i<aa.length;i++){               
 　　　　if(aa[i].checked){
@@ -120,38 +130,27 @@ var aa=document.register.sport;
              return false;
        }
 
-       // var bb=document.register.con2;
+ 
 
-       // var fff=false;
-
-       // for(var j=0;j<bb.length;j++){
-
-       //     if(bb[j].checked){
-
-       //         fff=true;
-
-       //      }
-
-       // }
-       // if(!fff){
-       //     alert("多选框没有选择，请选择");
-       //     return false;
-       // }   
-
-   return( true );
+   //return( true );
 }
-//-->
+
 </script>
 
-<!-- <script language="javascript">
-function checkform(obj)
-{
-for(i=0;i<obj.sport.length;i++){
-          if(obj.sport.checked==true)return true;}
-alert("請選擇")
-return false;       
-}
-</script> -->
+
+
+<script type="text/javascript" language="javascript">
+  // $(function(){
+  //        $("#btnSubmit").click(function(){
+  //           var val=$('input:checkbox[name="web[]"]:checked').val();
+  //           if(val==null){
+  //               alert("複選按鈕沒選擇!");
+  //               return false;
+  //           }
+             
+  //        });
+  //    });
+</script>
 
 
 

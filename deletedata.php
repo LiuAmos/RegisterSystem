@@ -69,6 +69,18 @@ $_SESSION['c'];
 		mysqli_query($db_link,"UPDATE student SET graduation='' WHERE account='$session_account'");
 		}
 
+		if($_c == '9'){
+		mysqli_query($db_link,"UPDATE student SET sport='' WHERE account='$session_account'");
+		}
+
+		if($_c == '10'){
+		mysqli_query($db_link,"UPDATE student SET fb='' WHERE account='$session_account'");
+		}
+
+		if($_c == '11'){
+		mysqli_query($db_link,"UPDATE student SET line1='' WHERE account='$session_account'");
+		}
+
  		mysqli_close($db_link);
 
  		echo "<input type ='submit'  onclick=\"location.href='membership.php?b=1'\" value='查看更新結果'></input>";

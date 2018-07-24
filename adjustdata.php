@@ -70,6 +70,18 @@ $_SESSION['a'];
 		mysqli_query($db_link,"UPDATE student SET graduation='$_comfirmadjust' WHERE account='$session_account'");
 		}
 
+		if($_a == '9'){
+		mysqli_query($db_link,"UPDATE student SET sport='$_comfirmadjust' WHERE account='$session_account'");
+		}
+
+		if($_a == '10'){
+		mysqli_query($db_link,"UPDATE student SET fb='$_comfirmadjust' WHERE account='$session_account'");
+		}
+
+		if($_a == '11'){
+		mysqli_query($db_link,"UPDATE student SET line1='$_comfirmadjust' WHERE account='$session_account'");
+		}
+
  		mysqli_close($db_link);
 
  		echo "<input type ='submit'  onclick=\"location.href='membership.php?b=1'\" value='查看更新結果'></input>";

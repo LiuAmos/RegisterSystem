@@ -46,7 +46,7 @@ $_SESSION['password'];
 
 
       echo "
-      	<table style='width:45%'>
+      	<table style='width:60%'>
 
       	<tr>
       	<th>Account</th>
@@ -57,6 +57,9 @@ $_SESSION['password'];
       	<th>Birthday</th>
       	<th>Skype</th>
       	<th>Graduation</th>
+        <th>Sport</th>
+        <th>FB</th>
+        <th>LINE</th>
       	</tr>
 
       	<tr>
@@ -68,6 +71,9 @@ $_SESSION['password'];
       	<td>$row1[5]</td>
       	<td>$row1[6]</td>
       	<td>$row1[7]</td>
+        <td>$row1[8]</td>
+        <td>$row1[9]</td>
+        <td>$row1[10]</td>
       	</tr>
 
       	</table>"
@@ -102,7 +108,7 @@ $_SESSION['password'];
 
 
     echo "
-        <table style='width:50%'>
+        <table style='width:60%'>
 
         <tr>
         <th>Account</th>
@@ -113,6 +119,9 @@ $_SESSION['password'];
         <th>Birthday</th>
         <th>Skype</th>
         <th>Graduation</th>
+        <th>Sport</th>
+        <th>FB</th>
+        <th>LINE</th>
         </tr>
 
         <tr>
@@ -124,6 +133,9 @@ $_SESSION['password'];
         <td>$row1[5]</td>
         <td>$row1[6]</td>
         <td>$row1[7]</td>
+        <td>$row1[8]</td>
+        <td>$row1[9]</td>
+        <td>$row1[10]</td>
         </tr>
 
         </table>"
@@ -135,7 +147,7 @@ $_SESSION['password'];
 
 
 
-	<table style='width:50%'>
+	<table style='width:68%'>
 
 
       <tr>
@@ -147,11 +159,14 @@ $_SESSION['password'];
       <td><input type ='submit' onclick="location.href='adjustdata.php?a=6'" value='修改' name='birthday'></input></td>
       <td><input type ='submit' onclick="location.href='adjustdata.php?a=7'" value='修改' name='skype'></input></td>
       <td><input type ='submit' onclick="location.href='adjustdata.php?a=8'" value='修改' name='graduation'></input></td>
+      <td><input type ='submit' onclick="location.href='adjustdata.php?a=9'" value='修改' name='sport'></input></td>
+      <td><input type ='submit' onclick="location.href='adjustdata.php?a=10'" value='修改' name='fb'></input></td>
+      <td><input type ='submit' onclick="location.href='adjustdata.php?a=11'" value='修改' name='line1'></input></td>
       </tr>
 
 	</table>
 
-  <table style='width:50%'>
+  <table style='width:68%'>
 
 
      <tr>
@@ -163,6 +178,9 @@ $_SESSION['password'];
      <td><input type ='submit' onclick="location.href='deletedata.php?c=6'" value='刪除' name='birthday'></input></td>
      <td><input type ='submit' onclick="location.href='deletedata.php?c=7'" value='刪除' name='skype'></input></td>
      <td><input type ='submit' onclick="location.href='deletedata.php?c=8'" value='刪除' name='graduation'></input></td>
+     <td><input type ='submit' onclick="location.href='deletedata.php?c=9'" value='刪除' name='sport'></input></td>
+     <td><input type ='submit' onclick="location.href='deletedata.php?c=10'" value='刪除' name='fb'></input></td>
+     <td><input type ='submit' onclick="location.href='deletedata.php?c=11'" value='刪除' name='line1'></input></td>
      </tr>
 
   </table>

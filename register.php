@@ -30,6 +30,7 @@
   	password     : <input type="password" name="password" id="password"><br>
     checkpassword: <input type="password" name="checkpassword" id="checkpassword" onblur="ShowName()"><br>
     <div id="img" style="position:fixed;display:none;top:48px;left:290px"><img src="http://bpic.588ku.com/element_pic/17/06/14/1572333b3db0dc51a41ad05323da0417.jpg"  alt="circle" height="4%" width="8%" ></div>
+    <div id="img1" style="position:fixed;display:none;top:48px;left:290px"><img src="https://vignette.wikia.nocookie.net/house-of-cards/images/a/a5/X.png/revision/latest?cb=20161128021903"  alt="circle" height="4%" width="8%" ></div>
   	name         : <input type="text" name="name"><br>
   	phone        : <input type="text" name="phone"><br>
   	email        : <input type="text" name="email"><br>
@@ -42,18 +43,26 @@
     <input  type="radio" name="sport" value="tennis">tennis<p><br>
     checkbox:<br>
     <input  type="checkbox"  name="web[]" value="1">FB
-    <input  type="checkbox"  name="web[]" value="1" >LINE<p>
+    <input  type="checkbox"  name="web[]" value="2" >LINE<p>
     <input type="submit" value="註冊" name="submit1" id="submit1">
 	</form>
 
 <script language="javascript">
 function ShowName(){
-	if(document.getElementById("password").value == document.getElementById("checkpassword").value){
+	if(document.getElementById("password").value == document.getElementById("checkpassword").value ){
     	//alert("讚讚讚!");
-  		document.getElementById("img").style.display='block'; 
+      
+  		document.getElementById("img").style.display='block';
+      document.getElementById("img1").style.display='none';
+      if(document.getElementById("checkpassword").value==""){
+      document.getElementById("img").style.display='none';
+  }
+ 
 	}else{
-		document.getElementById("img").style.display='none'; 
+		document.getElementById("img").style.display='none';
+    document.getElementById("img1").style.display='block'; 
 	}
+
 }
 </script>
 
@@ -137,6 +146,12 @@ var aa=document.register.sport;
              return false;
        }
 
+  //(document.f1.elements[10].checked == false && document.f1.elements[11].checked == false )
+  if(document.register.elements[12].checked == false && document.register.elements[13].checked== false){
+    alert("複選按鈕沒選擇!");
+    return false;
+  }
+
    //var bb=document.register.web;
    //alert("多選按鈕沒選擇!");
 //print_r(bb);
@@ -151,16 +166,16 @@ var aa=document.register.sport;
 
 
 <script  language="javascript">
-  $(function(){
-         $("#submit1").click(function(){
-            var val=$('input:checkbox[name="web[]"]:checked').val();
-            if(val==null){
-                alert("複選按鈕沒選擇!");
-                return false;
-            }
+  // $(function(){
+  //   $("#submit1").click(function(){
+  //     var val=$('input:checkbox[name="web[]"]:checked').val();
+  //     if(val==null){
+  //     alert("複選按鈕沒選擇!");
+  //     return false;
+  //    }
              
-         });
-     });
+  //        });
+  //    });
 </script>
 
 

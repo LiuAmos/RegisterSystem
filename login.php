@@ -64,7 +64,7 @@ $_SESSION['password']="";
     // 		}
  			$reg_web=$_GET['web'];
  			//echo $reg_web[0];
- 			if($reg_web[0]=="line"){
+ 			if($reg_web[0]=="2"){
  				$reg_line1=$reg_web[0];
  				
  			}else{
@@ -84,10 +84,6 @@ $_SESSION['password']="";
  			
  			//echo $reg_web;
  		
- 		}else{
- 		header("Location: http://localhost/register.php"); 
-		//確保重定向後，後續代碼不會被執行 
-		exit;
  		}
 
  		// if(isset($_GET['line1'])){
